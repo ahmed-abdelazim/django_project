@@ -1,0 +1,46 @@
+{% extends 'success_base.html' %}
+{% load staticfiles %}
+
+{% block meta%}
+
+
+                
+{% endblock meta %}
+
+{% block main %}
+      
+      
+<div style="min-height: 80vh;" class="container pt-5">
+    <h1>Thank you for purchasing!</h1>
+    <h5>Below you will find your login details for each account.</h5>
+    
+    <h6>An email has been sent with the details below as a backup. </h6>
+    <h3>
+            Payment ID
+            <small class="text-muted">{{accounts.StripePaymentID}}</small>
+          </h3>
+    <table class="table table-dark ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Server</th>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+              </tr>
+            </thead>
+            <tbody>
+                    {% for account in accounts %}  
+              <tr>
+                <th scope="row">1</th>
+                <td>{{account.Server}}</td>
+                <td>{{account.Username}}</td>
+                <td>{{account.Password}}</td>
+              </tr>
+              {% endfor %}
+           
+            </tbody>
+          </table>
+
+</div>
+
+{% endblock main%}

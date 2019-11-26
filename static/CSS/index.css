@@ -1,0 +1,21 @@
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://gamepedia.cursecdn.com/lolesports_gamepedia_en/9/9d/Gnar_Splash_13.jpg?version=148e23032356c30049f14f63cc82fb3c');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.navbar {
+    background-color: transparent;
+}
+
+
+.navbar {
+    padding: .5rem 0rem !important;
+}
+
+html {
+    scroll-behavior: smooth;
+  }

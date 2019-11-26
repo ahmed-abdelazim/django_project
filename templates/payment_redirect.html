@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block meta %}
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe(
+      'pk_test_OZnNsRVLtgtn3dVM0vnqAxxM',
+      {
+      }
+    );
+    
+    </script>
+    <script>
+            stripe.redirectToCheckout({
+              sessionId: "{{context}}",
+            }).then(function (result) {
+              // Diplay result.error.message to your customer
+            });
+            </script> 
+            <title>GolemGrid - Blender rendering</title> 
+            <meta name="description" content="Submit a blender task for computation."> 
+
+{% endblock meta %}
+{% block main %}
+<div class="container">
+
+    <h1 class="flow-text center">Hold on, we're redirecting you to the payment site.</h1>
+    <div class="container center">
+     <div class="section"></div>
+    <div class="preloader-wrapper big active center">
+     <div class="spinner-layer spinner-blue-only">
+       <div class="circle-clipper left">
+         <div class="circle"></div>
+       </div><div class="gap-patch">
+         <div class="circle"></div>
+       </div><div class="circle-clipper right">
+         <div class="circle"></div>
+       </div>
+     </div>
+     </div>
+   </div>
+</div>
+{% endblock main %}
